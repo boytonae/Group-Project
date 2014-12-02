@@ -37,7 +37,7 @@ public void setGenes(int genes[]){
 
 public void construct(){
 	for(int i = 0; i < getNumberOfLimbs(); i++){
-		//hello
+		//
 	}
 }
 
