@@ -8,10 +8,11 @@ import java.awt.geom.Line2D;
 
 
 public class Drawer extends JPanel {
+	
 	public static void main(String[] args) {
 		JFrame f = new JFrame("Title");
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Biomorph b = new Biomorph(100);
+		Biomorph b = new Biomorph(356);
 		Drawer d = new Drawer(b);
 		f.add(d);
 		f.setSize(400,250);
@@ -19,9 +20,11 @@ public class Drawer extends JPanel {
 	}
 	
 	private Biomorph b;
+	
 	public Drawer(Biomorph b){
 		this.b = b;
 	}
+	
 	//draws out the following method
 	public void paintComponent(Graphics g){
 		

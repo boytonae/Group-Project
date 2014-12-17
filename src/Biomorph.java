@@ -8,7 +8,7 @@ public class Biomorph {
 	private ArrayList<Limb> limbCollection = new ArrayList<Limb>();
 	private boolean symmetry = false;
 	public Biomorph(int limbNumber){
-		construct(limbNumber, 100, 100);
+		construct(limbNumber, 200, 125);
 	}
 	public ArrayList<Limb> getLimbCollection(){
 		return limbCollection;
