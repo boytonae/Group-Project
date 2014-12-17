@@ -7,6 +7,7 @@ public class Limb {
 	private String direction;
 	private String color;
 	private Random rnd = new Random();
+	private boolean symmetry = false;
 	Color c;
 	
 	public Limb(int xPos, int yPos, int height, int width, int redColor, int greenColor, int blueColor){
@@ -19,7 +20,12 @@ public class Limb {
 		this.direction = randomDirection();
 		
 	}
-	
+	public boolean getSymmetry(){
+		return symmetry;
+	}
+	public void setSymmetry(Boolean setSymmetry){
+		this.symmetry = setSymmetry;
+	}
 	public String randomDirection(){
 		int randomStorer = rnd.nextInt(8);
 		if(randomStorer == 0){
