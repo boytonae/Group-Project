@@ -1,23 +1,38 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Random;
 
 
 public class Biomorph {
 
-	private Random rnd = new Random();
-	private ArrayList<Limb> limbCollection = new ArrayList<Limb>();
+	private Random rnd;
+	private NaryTree<Limb> limbCollection;
 	private boolean symmetry = false;
-	public Biomorph(int limbNumber){
-		construct(limbNumber, 200, 125);
+	public Biomorph(int seed, int complexity, int maxDepth, int probNewLimb)
+	{
+		rnd = new Random(seed);
+		limbCollection = new NaryTree<Limb>(complexity, maxDepth, probNewLimb);
 	}
-	public ArrayList<Limb> getLimbCollection(){
+	
+	public NaryTree<Limb> getLimbCollection()
+	{
 		return limbCollection;
 	}
+	public void mutate()
+	{
+		
+	}
+	
 	public void setSymmetry(Boolean setSymmetry){
 		this.symmetry = setSymmetry;
 		
 	}
-	public void construct(int noOfLimbs, int initialXpos, int initialYpos){
+	
+	public LinkedList<int[]> getAllGenes()
+	{
+		return limbCollection.getAllGenes();
+	}
+	/**public void construct(int noOfLimbs, int initialXpos, int initialYpos){
 		int currentXPos = initialXpos;
 		int currentYPos = initialYpos;
 		int currentSymmetryXpos = initialXpos;
@@ -76,14 +91,6 @@ public class Biomorph {
 				currentSymmetryXpos = currentSymmetryXpos + height;
 				currentYPos = currentYPos + height;
 			}
-			
-			
-			
 		}
-		
+		**/
 	}
-	
-	
-	
-	
-}
