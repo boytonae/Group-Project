@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class NaryTreeNode {
+public class NaryTreeNode<Limb> {
 	private Limb element;
 	private NaryTreeNode[] children;
 	private int depth;
@@ -43,6 +43,7 @@ public class NaryTreeNode {
 	
 	public void addChild(){
 		for(int i =0; i<children.length;i++){
+			NaryTreeNode<Limb> newChild = new NaryTreeNode<Limb>(i, element.mutate());
 			if(children[i]==null){
 				children[i] = Factory.createLimb(genes);
 				break;
